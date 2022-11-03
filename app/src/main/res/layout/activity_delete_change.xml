@@ -5,38 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/black"
     tools:context=".administractor.delete_change">
     <!--总体布局-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
-        <!--    固定顶部-->
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="35dp"
-                android:gravity="center"
-                android:text="欢迎来到修改信息页面"/>
-        </LinearLayout>
-        <!--    固定顶部-->
+            android:layout_height="?attr/actionBarSize"
+            android:background="#E4B0ED"
+            app:titleTextColor="#321F35"
+            app:title="修改食材信息"
+            android:fitsSystemWindows="true"
+            >
+        </androidx.appcompat.widget.Toolbar>
 
         <!--中间可滑动布部分-->
         <ScrollView android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#083A3838"
             tools:ignore="MissingConstraints">
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_new"
                 tools:ignore="MissingConstraints">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -49,12 +47,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ID"
+                        android:text="ID："
+                        android:textColor="#714278"
                         android:textSize="30dp" />
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="number"
                         android:id="@+id/edit_x_ID"/>
 
@@ -69,12 +69,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="品名"
+                        android:textColor="#714278"
+                        android:text="品名："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_x_pinming"/>
                 </LinearLayout>
                 <LinearLayout
@@ -82,19 +84,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="类别"
+                        android:textColor="#714278"
+                        android:text="类别："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_cate"/>
                 </LinearLayout>
@@ -109,13 +112,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="许可证号"
+                        android:textColor="#714278"
+                        android:text="许可证号："
 
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_x_license"/>
                 </LinearLayout>
                 <LinearLayout
@@ -123,19 +128,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="标准号"
+                        android:textColor="#714278"
+                        android:text="标准号："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="number"
                         android:id="@+id/edit_x_standard"/>
                 </LinearLayout>
@@ -144,19 +150,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="保质期"
+                        android:textColor="#714278"
+                        android:text="保质期："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_x_date"/>
                 </LinearLayout>
                 <LinearLayout
@@ -164,19 +171,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="贮存条件"
+                        android:textColor="#714278"
+                        android:text="贮存条件："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_store"/>
                 </LinearLayout>
@@ -185,19 +193,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="制造商"
+                        android:textColor="#714278"
+                        android:text="制造商："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_x_make"/>
                 </LinearLayout>
                 <LinearLayout
@@ -205,19 +214,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="地址"
+                        android:textColor="#714278"
+                        android:text="地址："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_address"/>
                 </LinearLayout>
@@ -226,19 +236,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="产地"
+                        android:textColor="#714278"
+                        android:text="产地："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_from"/>
                 </LinearLayout>
@@ -247,19 +258,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="营养成分"
+                        android:textColor="#714278"
+                        android:text="营养成分："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_nutrition"/>
                 </LinearLayout>
@@ -268,19 +280,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="净含量"
+                        android:textColor="#714278"
+                        android:text="净含量："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_content"/>
                 </LinearLayout>
@@ -289,19 +302,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:gravity="left
-"
+                    android:gravity="left"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="库存"
+                        android:textColor="#714278"
+                        android:text="库存："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="text"
                         android:id="@+id/edit_x_stock"/>
                 </LinearLayout>
@@ -314,26 +328,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#EEE0F8">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
                 android:text="保存"
                 android:id="@+id/button_x_baocun"
-
                 />
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_weight="1"
                 android:text="删除"
                 android:id="@+id/button_x_delete"
-
                 />
-
-
         </LinearLayout>
 
         <!--    底部固定-->

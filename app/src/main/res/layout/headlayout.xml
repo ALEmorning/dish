@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#C1D3C2"
+    android:background="#009688"
     android:id="@+id/headlayout">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -19,6 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/circleimage"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp"
         android:id="@+id/welcome_textview"/>
 
 </RelativeLayout>

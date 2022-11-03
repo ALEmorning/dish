@@ -16,12 +16,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#714278"
             android:text="ID  "
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/list_m_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#714278"
             android:textSize="20dp"
 
             />
@@ -34,12 +36,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#714278"
             android:text="名称  "
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/list_m_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#714278"
             android:textSize="20dp"
 
             />
@@ -52,12 +56,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#714278"
             android:text="主料  "
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/list_m_zhuliao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#714278"
             android:textSize="20dp"
 
             />

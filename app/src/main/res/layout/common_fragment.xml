@@ -3,21 +3,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#083A3838"
     >
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="#E4B0ED"
         android:id="@+id/toolbar_fragment_common"
         app:title="管理员设置"
+        app:titleTextColor="#321F35"
         >
     </androidx.appcompat.widget.Toolbar>
     <ListView
         android:id="@+id/f_c_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#000"
-        android:dividerHeight="1px"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_new"
+        android:divider="#4B0757"
+        android:dividerHeight="2px"
         android:layout_below="@+id/toolbar_fragment_common"
         android:layout_above="@+id/ll1">
 
@@ -28,32 +35,76 @@
         android:layout_height="wrap_content"
         android:id="@+id/ll1"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="查询留言"
-            android:layout_weight="1"
-            android:id="@+id/f_query_liuyan"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/f_look_collect"
-            android:layout_weight="1"
-            android:text="查询收藏"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/look_admin"
-            android:text="管理员信息"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/f_make_menu"
-            android:text="生成菜单"/>
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_new5">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="40dp">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
 
+                android:layout_marginBottom="10dp"
+                android:text="查询留言"
+                android:layout_weight="1"
+                android:id="@+id/f_query_liuyan"/>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/f_look_collect"
+                android:layout_weight="1"
+                android:text="查询收藏"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:id="@+id/look_admin"
+                android:text="管理员信息"/>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:id="@+id/f_make_menu"
+                android:text="生成菜单"/>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

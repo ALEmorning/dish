@@ -2,20 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#083A3838"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="#E4B0ED"
         android:id="@+id/toolbar_fragment_food"
-        app:title="管理食材"
+        app:titleTextColor="#321F35"
+        app:title="管理食材与用户信息"
         android:fitsSystemWindows="true"
         >
-
     </androidx.appcompat.widget.Toolbar>
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:id="@+id/user_swipe_refresh"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_new"
         android:layout_above="@+id/l"
         android:layout_below="@+id/toolbar_fragment_food"
         android:layout_height="wrap_content">
@@ -23,11 +29,9 @@
             android:layout_width="match_parent"
             android:id="@+id/f_listview"
             android:dividerHeight="1px"
-            android:divider="#000"
+            android:divider="#4B0757"
             android:fastScrollEnabled="true"
-
             android:layout_height="match_parent">
-
         </ListView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -38,66 +42,107 @@
         android:layout_height="wrap_content"
         android:id="@+id/l"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_new5"
+        >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
-        <EditText
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:hint="请输入ID"
-            android:id="@+id/f_edit_querybyid"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:hint="请输入品名"
-            android:id="@+id/f_edit_querybyname"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:hint="请输入产品类别"
-            android:id="@+id/f_edit_querybyleibie"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/f_query"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/f_query"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:text="查询所有\n食材信息"/>
+
+            <Button
+                android:text="查询用户信息"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/f_query_account"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            android:text="查询所有食材信息"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="查询登录信息"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_weight="3"
+                android:hint="请输入ID"
+                android:id="@+id/f_edit_querybyid"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_weight="3"
+                android:hint="请输入品名"
+                android:id="@+id/f_edit_querybyname"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_weight="3"
+                android:hint="请输入产品类别"
+                android:id="@+id/f_edit_querybyleibie"/>
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:text=" 按照条件查询"
+                android:id="@+id/f_query_byterm"/>
 
-            android:id="@+id/f_query_account"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-
-            android:text="查询"
-            android:id="@+id/f_query_byterm"/>
-
+        </LinearLayout>
 
     </LinearLayout>
+
+
+
     </LinearLayout>
 
 

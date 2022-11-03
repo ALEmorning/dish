@@ -5,38 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/timg3"
     tools:context=".administractor.add">
     <!--总体布局-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <!--    固定顶部-->
-        <LinearLayout
+        android:orientation="vertical"
+        >
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="50dp"
-                android:gravity="center"
-                android:text="增加菜谱信息"/>
-        </LinearLayout>
-        <!--    固定顶部-->
+            android:layout_height="?attr/actionBarSize"
+            android:background="#E4B0ED"
+            app:titleTextColor="#321F35"
+            app:title="添加菜谱信息"
+            android:fitsSystemWindows="true"
+            >
+        </androidx.appcompat.widget.Toolbar>
+
 
         <!--中间可滑动布部分-->
         <ScrollView android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#083A3838"
             tools:ignore="MissingConstraints">
+
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_new"
                 tools:ignore="MissingConstraints">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -48,13 +49,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ID"
-                        android:textSize="30dp" />
+                        android:text="ID："
+                        android:textColor="#714278"
+                        android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_id"/>
                 </LinearLayout>
                 <LinearLayout
@@ -68,12 +71,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="名称"
+                        android:textColor="#714278"
+                        android:text="名称："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_name"/>
                 </LinearLayout>
                 <LinearLayout
@@ -87,12 +92,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="主料"
+                        android:textColor="#714278"
+                        android:text="主料："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_zhuliao"/>
                 </LinearLayout>
                 <LinearLayout
@@ -106,12 +113,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="主料含量"
+                        android:textColor="#714278"
+                        android:text="主料含量："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="number"
                         android:id="@+id/edit_menu_zhuhan"/>
                 </LinearLayout>
@@ -126,12 +135,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="配料"
+                        android:textColor="#714278"
+                        android:text="配料："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_peiliao"/>
                 </LinearLayout>
                 <LinearLayout
@@ -145,12 +156,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="配料含量"
+                        android:textColor="#714278"
+                        android:text="配料含量："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:inputType="number"
                         android:id="@+id/edit_menu_peihan"/>
                 </LinearLayout>
@@ -165,12 +178,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="做法"
+                        android:textColor="#714278"
+                        android:text="做法："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_make"/>
                 </LinearLayout>
                 <LinearLayout
@@ -185,13 +200,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="菜系"
+                        android:textColor="#714278"
+                        android:text="菜系："
                         android:inputType="number"
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_caixi"/>
                 </LinearLayout>
                 <LinearLayout
@@ -206,12 +223,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="荤素"
+                        android:textColor="#714278"
+                        android:text="荤素："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_hunsu"/>
                 </LinearLayout>
 
@@ -225,12 +244,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="可做"
+                        android:textColor="#714278"
+                        android:text="可做："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_kezuo"/>
                 </LinearLayout>
                 <LinearLayout
@@ -243,12 +264,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="价格"
+                        android:textColor="#714278"
+                        android:text="价格："
                         android:textSize="30dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#714278"
                         android:id="@+id/edit_menu_price"/>
                 </LinearLayout>
             </LinearLayout>
@@ -260,17 +283,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#EEE0F8">
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_weight="1"
                 android:id="@+id/button_add_ok"
-                android:text="增加"/>
+                android:text="添加"/>
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:width="10dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:background="@drawable/shape_new3"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:layout_weight="1"
                 android:id="@+id/button_finish_add"
                 android:text="返回"/>
@@ -282,5 +323,10 @@
 
     </LinearLayout>
     <!--总体布局-->
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -175,35 +175,7 @@ public class activity_user extends AppCompatActivity {
 
                     //查看结果
                     case R.id.nav_menu_look_hcollect:
-                        /*
 
-                        //两表连接查询
-                        Cursor cursor = db.rawQuery(
-                                "select * from user_collect inner join Menu " +
-                                        "on user_collect.menu_name =Menu.名称 " +
-                                        "AND user_collect.menu_caixi = Menu.菜系  " +
-                                        "where id = ?", new String[]{intent_1.getStringExtra("id")});
-                        ArrayList<Map<String, String>> arrayList_1 = new ArrayList<Map<String, String>>();
-                        if (cursor.getCount() == 0) {
-                            Toast.makeText(activity_user.this, "您还没有收藏任何菜品！", Toast.LENGTH_SHORT).show();
-                        } else {
-                            while (cursor.moveToNext()) {
-                                Map<String, String> map = new HashMap<String, String>();
-
-                                //map.put("", cursor.getString(cursor.getColumnIndex("")));
-
-                                arrayList_1.add(map);
-
-                            }/*
-                            //设置适配器，并绑定布局文件
-                            SimpleAdapter simpleAdapter = new SimpleAdapter(activity_user.this, arrayList_1, R.layout.choose_result,
-                                    new String[]{"course_name", "teacher_name", "course_time", "course_weight", "course_period"}, new int[]{R.id.result_course_name, R.id.result_teacher_name, R.id.result_time, R.id.result_weight, R.id.result_period});
-                            listView_mycourse.setAdapter(simpleAdapter);
-
-
-                        }
-
-                         */
 
                         break;
 
@@ -228,26 +200,19 @@ public class activity_user extends AppCompatActivity {
                         //查询表中所有数据
                         Cursor cursor1 = db.query("Food",null,null,null,null,null,null);
                         Cursor cursor2 = db.query("caidan",null,null,null,null,null,null);
-
                         data2="筛选菜单：\n";
-
-                        int message1=0;  //判断是否为空
-                        int message2=0;
-                        int message3=0;
+                        int message1=0,message2=0,message3=0;//判断是否为空
                         //如果为空，对应参数设为1
-                        if(edit_queryhunsu.getText().toString().isEmpty())
-                            message1=1;
-                        if(edit_querybynutri.getText().toString().isEmpty())
-                            message2=1;
-                        if(edit_querybycaixi.getText().toString().isEmpty())
-                            message3=1;
+                        if(edit_queryhunsu.getText().toString().isEmpty())    message1=1;
+                        if(edit_querybynutri.getText().toString().isEmpty())     message2=1;
+                        if(edit_querybycaixi.getText().toString().isEmpty())        message3=1;
                         data2+="名称        荤素   菜系   营养成分\n";
                         if (cursor2.moveToFirst()){
                             do {
                                 //若无输入，则直接查找，若有输入，则根据条件查找，且必须都满足状态为可做
                                 if("是".equals(cursor2.getString(cursor2.getColumnIndex("可做")))&&
-                                        (message1==1||edit_queryhunsu.getText().toString().equals(cursor2.getString(cursor2.getColumnIndex("荤素"))))&&
-                                        (message3==1||edit_querybycaixi.getText().toString().equals(cursor2.getString(cursor2.getColumnIndex("菜系")))))
+                                        (message1==1||edit_queryhunsu.getText().toString().equals(GetHunsu(cursor2.getString(cursor2.getColumnIndex("名称")))))&&
+                                        (message3==1||edit_querybycaixi.getText().toString().equals(GetCaixi(cursor2.getString(cursor2.getColumnIndex("名称"))))))
                                     if(message2==0)//输入了营养成分需求
                                     {
                                         if(cursor1.moveToFirst()){
@@ -256,8 +221,10 @@ public class activity_user extends AppCompatActivity {
                                                         edit_querybynutri.getText().toString().equals(cursor1.getString(cursor1.getColumnIndex("营养成分"))))
                                                 {
                                                     String name = cursor2.getString(cursor2.getColumnIndex("名称"));
-                                                    String caixi = cursor2.getString(cursor2.getColumnIndex("菜系"));
-                                                    String hunsu = cursor2.getString(cursor2.getColumnIndex("荤素"));
+                                                    //String caixi = cursor.getString(cursor.getColumnIndex("菜系"));
+                                                    String caixi = GetCaixi(cursor2.getString(cursor2.getColumnIndex("名称")));
+                                                    //String hunsu = cursor.getString(cursor.getColumnIndex("荤素"));
+                                                    String hunsu = GetHunsu(cursor2.getString(cursor2.getColumnIndex("名称")));
                                                     String yingyang=GetYingyang(cursor2.getString(cursor2.getColumnIndex("主料")));
                                                     data2+=name+"    "+hunsu+"    "+caixi+"       "+yingyang+"    "+"\n";
                                                 }
@@ -267,8 +234,10 @@ public class activity_user extends AppCompatActivity {
                                     else
                                     {
                                         String name = cursor2.getString(cursor2.getColumnIndex("名称"));
-                                        String caixi = cursor2.getString(cursor2.getColumnIndex("菜系"));
-                                        String hunsu = cursor2.getString(cursor2.getColumnIndex("荤素"));
+                                        //String caixi = cursor.getString(cursor.getColumnIndex("菜系"));
+                                        String caixi = GetCaixi(cursor2.getString(cursor2.getColumnIndex("名称")));
+                                        //String hunsu = cursor.getString(cursor.getColumnIndex("荤素"));
+                                        String hunsu = GetHunsu(cursor2.getString(cursor2.getColumnIndex("名称")));
                                         String yingyang=GetYingyang(cursor2.getString(cursor2.getColumnIndex("主料")));
                                         data2+=name+"    "+hunsu+"    "+caixi+"       "+yingyang+"    "+"\n";
                                     }
@@ -293,8 +262,10 @@ public class activity_user extends AppCompatActivity {
                                 if("是".equals(cursor.getString(cursor.getColumnIndex("可做"))))
                                 {
                                     String name = cursor.getString(cursor.getColumnIndex("名称"));
-                                    String caixi = cursor.getString(cursor.getColumnIndex("菜系"));
-                                    String hunsu = cursor.getString(cursor.getColumnIndex("荤素"));
+                                    //String caixi = cursor.getString(cursor.getColumnIndex("菜系"));
+                                    String caixi = GetCaixi(cursor.getString(cursor.getColumnIndex("名称")));
+                                    //String hunsu = cursor.getString(cursor.getColumnIndex("荤素"));
+                                    String hunsu = GetHunsu(cursor.getString(cursor.getColumnIndex("名称")));
                                     String yingyang=GetYingyang(cursor.getString(cursor.getColumnIndex("主料")));
                                     data1+=name+"    "+hunsu+"    "+caixi+"       "+yingyang+"    "+"\n";
                                 }
@@ -312,13 +283,10 @@ public class activity_user extends AppCompatActivity {
 //                        startActivity(intent_2);
 
                         Updata();
-
                         Cursor cursor3=db.query("Food",null,null,null,null,null,null);
                         Cursor cursor4=db.query("caidan",null,null,null,null,null,null);
-
                         double content3; //主料含量
                         double content4; //辅料含量
-
                         if (cursor4.moveToFirst()){
                             do {
                                 content3=cursor4.getDouble(cursor4.getColumnIndex("主料含量"));
@@ -339,9 +307,8 @@ public class activity_user extends AppCompatActivity {
                                                         {cursor3.getString(cursor3.getColumnIndex("品名"))});
                                                 values.clear();
                                             }
-                                            if (cursor3.getString(cursor3.getColumnIndex("品名"))
-                                                    .equals(cursor4.getString(cursor4.getColumnIndex("配料")))
-                                                    &&cursor3.getDouble(cursor3.getColumnIndex("库存"))>=content4)
+                                            if (cursor3.getString(cursor3.getColumnIndex("品名")).equals(cursor4.getString(cursor4.getColumnIndex
+                                                    ("配料")))&&cursor3.getDouble(cursor3.getColumnIndex("库存"))>=content4)
                                             {
                                                 ContentValues values = new ContentValues();
                                                 values.put("库存",cursor3.getDouble(cursor3.getColumnIndex("库存"))-content4);
@@ -352,9 +319,8 @@ public class activity_user extends AppCompatActivity {
                                         } while (cursor3.moveToNext());
                                     }
                                     data4+=cursor4.getString(cursor4.getColumnIndex("名称"))+"\n";
-                                    money+=cursor4.getDouble(cursor4.getColumnIndex("价格"));
+                                    money+=GetJiage(cursor4.getString(cursor4.getColumnIndex("名称")));
                                     Toast.makeText(activity_user.this,"点单成功！",Toast.LENGTH_SHORT).show();
-
                                     Updata();
                                 }
                                 //如果不可做，输出提示
@@ -396,12 +362,9 @@ public class activity_user extends AppCompatActivity {
     public void Updata(){
         Cursor cursor1=db.query("Food",null,null,null,null,null,null);
         Cursor cursor2=db.query("caidan",null,null,null,null,null,null);
-
         double content1; //主料含量
         double content2; //配料含量
         int i=0;//计数变量
-        //deleteDatabase("test_db");
-
         if (cursor2.moveToFirst()){
             do {
                 content1=cursor2.getDouble(cursor2.getColumnIndex("主料含量"));
@@ -457,7 +420,56 @@ public class activity_user extends AppCompatActivity {
         }
         return name;
     }
-
+    //获取菜系
+    @SuppressLint("Range")
+    public String GetCaixi(String str)
+    {
+        //获取数据库对象
+        Cursor cursor1=db.query("Menu",null,null,null,null,null,null);
+        String name="";
+        if(cursor1.moveToFirst()){
+            do{
+                if(cursor1.getString(cursor1.getColumnIndex("名称")).equals(str))
+                {
+                    name = cursor1.getString(cursor1.getColumnIndex("菜系"));
+                }
+            }while (cursor1.moveToNext());
+        }
+        return name;
+    }
+    @SuppressLint("Range")
+    public Double GetJiage(String str)
+    {
+        //获取数据库对象
+        Cursor cursor1=db.query("Menu",null,null,null,null,null,null);
+        double name=0;
+        if(cursor1.moveToFirst()){
+            do{
+                if(cursor1.getString(cursor1.getColumnIndex("名称")).equals(str))
+                {
+                    name = cursor1.getDouble(cursor1.getColumnIndex("价格"));
+                }
+            }while (cursor1.moveToNext());
+        }
+        return name;
+    }
+    //获取荤素
+    @SuppressLint("Range")
+    public String GetHunsu(String str)
+    {
+        //获取数据库对象
+        Cursor cursor1=db.query("Menu",null,null,null,null,null,null);
+        String name="";
+        if(cursor1.moveToFirst()){
+            do{
+                if(cursor1.getString(cursor1.getColumnIndex("名称")).equals(str))
+                {
+                    name = cursor1.getString(cursor1.getColumnIndex("荤素"));
+                }
+            }while (cursor1.moveToNext());
+        }
+        return name;
+    }
     private void initView() {
 
         //获取数据库对象
