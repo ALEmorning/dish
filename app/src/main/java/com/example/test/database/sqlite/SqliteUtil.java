@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.test.administractor.add_menu;
 import com.example.test.database.CommonDatabase;
 
 import org.litepal.LitePal;
@@ -108,8 +107,9 @@ public class SqliteUtil {
                     if (food_p.get品名().equals(配料)) {
 
                         if (食物库存 - 菜单库存 > 0 && food_p.get库存() - 配料库存 > 0) {
-                            String sql_insertm6 = "insert into caidan(id,名称,主料,配料,主料含量,配料含量) values" +
-                                    " ('" + menu.getId() + "','" + menu.get名称() + "','" + menu.get主料() + "','" + menu.get配料() + "','" + menu.get主料含量() + "','" + menu.get配料含量() + "');";
+                            String sql_insertm6 = "insert into caidan(id,名称,主料,配料,主料含量,配料含量,做法步骤,菜系,荤素,可做,价格) values" +
+                                    " ('" + menu.getId() + "','" + menu.get名称() + "','" + menu.get主料() + "','" + menu.get配料() + "','" + menu.get主料含量() + "','" + menu.get配料含量() + " ','" + menu.get做法步骤() + "','" + menu.get菜系() + "','" + menu.get荤素() + "','" + menu.get可做() + "','" + menu.get价格() + "');";
+
 
                             Log.d(TAG, "generateCaidan:sql_insertm6: " + sql_insertm6);
                             db.execSQL(sql_insertm6);

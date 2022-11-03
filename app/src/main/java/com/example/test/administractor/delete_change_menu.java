@@ -4,10 +4,8 @@ import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -104,7 +102,7 @@ public class delete_change_menu extends AppCompatActivity implements View.OnClic
                     //    通过AlertDialog.Builder这个类来实例化我们的一个AlertDialog的对象
                     AlertDialog.Builder builder = new AlertDialog.Builder(delete_change_menu.this);
                     //    设置Title的图标
-                    builder.setIcon(R.drawable.ic_launcher_background);
+                    builder.setIcon(R.drawable.warn1);
                     //    设置Title的内容
                     builder.setTitle("警告框");
                     //    设置Content来显示一个信息
@@ -136,10 +134,6 @@ public class delete_change_menu extends AppCompatActivity implements View.OnClic
                     break;
                 /****更改*****/
                 case R.id.button_xm_baocun:
-                    Cursor cursor = db.query("Menu",null,"ID = ?",
-                            new String[]{edit_m_id.getText().toString()},null,null,null);
-                    if(cursor.getCount()==0)
-                    {
                         //获取这三项数据，并写入contentvalues中
                         ContentValues values2 = new ContentValues();
 
@@ -157,11 +151,7 @@ public class delete_change_menu extends AppCompatActivity implements View.OnClic
 
                         db.update("Menu", values2, "ID = ? ", new String[]{t_d_id});
                         finish();
-                    }
-                    else
-                    {
-                        Toast.makeText(delete_change_menu.this,"这个ID已存在！",Toast.LENGTH_SHORT).show();
-                    }
+
 
                     break;
 

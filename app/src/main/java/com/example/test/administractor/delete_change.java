@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -105,7 +104,7 @@ public class delete_change extends AppCompatActivity implements View.OnClickList
                 //    通过AlertDialog.Builder这个类来实例化我们的一个AlertDialog的对象
                 AlertDialog.Builder builder = new AlertDialog.Builder(delete_change.this);
                 //    设置Title的图标
-                builder.setIcon(R.drawable.ic_launcher_background);
+                builder.setIcon(R.drawable.warn1);
                 //    设置Title的内容
                 builder.setTitle("弹出警告框");
                 //    设置Content来显示一个信息

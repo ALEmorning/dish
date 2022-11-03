@@ -3,12 +3,10 @@ package com.example.test.administractor;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import com.example.test.R;
 

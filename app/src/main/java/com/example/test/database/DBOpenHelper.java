@@ -64,6 +64,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 " 做法步骤 text , " +
                 " 菜系 text , " +
                 " 荤素 text , " +
+                " 营养成分 text , " +
                 " 可做 char(10) , " +
                 " 价格 double , " +
                 " FOREIGN KEY(主料) REFERENCES Food(品名) , " +
@@ -78,20 +79,20 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
         //插入信息
-        String sql_insertf1 = "insert into Food(id,品名,库存,保质期) values ('001','鸡肉','20','2');";
-        String sql_insertf2 = "insert into Food(id,品名,库存,保质期) values ('002','猪肉','8','1');";
-        String sql_insertf3 = "insert into Food(id,品名,库存,保质期) values ('003','青菜','10','3');";
-        String sql_insertf4 = "insert into Food(id,品名,库存,保质期) values ('004','土豆','10','3');";
-        String sql_insertf5 = "insert into Food(id,品名,库存,保质期) values ('005','豆腐','10','3');";
-        String sql_insertf6 = "insert into Food(id,品名,库存,保质期) values ('006','木耳','10','3');";
-        String sql_insertf7 = "insert into Food(id,品名,库存,保质期) values ('007','辣椒','12','5');";
-        String sql_insertf8 = "insert into Food(id,品名,库存,保质期) values ('008','葱','10','5');";
-        String sql_insertm1 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量) values ('001','辣子鸡','鸡肉','辣椒','3','7');";
-        String sql_insertm2 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量) values ('002','葱爆鸡块','鸡肉','葱','4','6');";
-        String sql_insertm3 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量) values ('003','土豆炖鸡','鸡肉','土豆','5','5');";
-        String sql_insertm4 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量) values ('004','木耳炒猪肉','猪肉','木耳','5','5');";
-        String sql_insertm5 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量) values ('005','辣椒炒肉','猪肉','辣椒','4','6');";
-        String sql_insertm6 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量) values ('006','豆腐炒青菜','青菜','豆腐','6','4');";
+        String sql_insertf1 = "insert into Food(id,品名,库存,保质期,营养成分) values ('001','鸡肉','2000','2','蛋白质');";
+        String sql_insertf2 = "insert into Food(id,品名,库存,保质期,营养成分) values ('002','猪肉','800','1','脂肪');";
+        String sql_insertf3 = "insert into Food(id,品名,库存,保质期,营养成分) values ('003','青菜','1000','3','维生素');";
+        String sql_insertf4 = "insert into Food(id,品名,库存,保质期,营养成分) values ('004','土豆','1000','3','热量');";
+        String sql_insertf5 = "insert into Food(id,品名,库存,保质期,营养成分) values ('005','豆腐','1000','3','蛋白质');";
+        String sql_insertf6 = "insert into Food(id,品名,库存,保质期,营养成分) values ('006','木耳','1000','3','碳水化合物');";
+        String sql_insertf7 = "insert into Food(id,品名,库存,保质期,营养成分) values ('007','辣椒','1200','5','维生素');";
+        String sql_insertf8 = "insert into Food(id,品名,库存,保质期,营养成分) values ('008','葱','1000','5','维生素');";
+        String sql_insertm1 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量,菜系,荤素,价格) values ('001','辣子鸡','鸡肉','辣椒','3','7','川菜','荤','26');";
+        String sql_insertm2 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量,菜系,荤素,价格) values ('002','葱爆鸡块','鸡肉','葱','4','6','鲁菜','荤','25');";
+        String sql_insertm3 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量,菜系,荤素,价格) values ('003','土豆炖鸡','鸡肉','土豆','5','5','徽菜','荤','24');";
+        String sql_insertm4 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量,菜系,荤素,价格) values ('004','木耳炒猪肉','猪肉','木耳','5','5','苏菜','荤','20');";
+        String sql_insertm5 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量,菜系,荤素,价格) values ('005','辣椒炒肉','猪肉','辣椒','4','6','浙菜','荤','18');";
+        String sql_insertm6 = "insert into Menu(id,名称,主料,配料,主料含量,配料含量,菜系,荤素,价格) values ('006','豆腐炒青菜','青菜','豆腐','6','4','闽菜','素','12');";
 
 
         db.execSQL(sql_insertf1);

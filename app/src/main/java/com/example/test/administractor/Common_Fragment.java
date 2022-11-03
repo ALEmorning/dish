@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -151,6 +150,10 @@ public class Common_Fragment extends Fragment {
                         break;
 
                      */
+                    case R.id.f_look_collect:
+                        Toast.makeText(getActivity(), "此功能后期开放~", Toast.LENGTH_SHORT).show();
+                        break;
+
                     /*******生成菜单*******/
                     case R.id.f_make_menu:
                         listview_state = "make_menu";
@@ -168,7 +171,9 @@ public class Common_Fragment extends Fragment {
                                 tvPm.setText(caidan.get名称());
                                 tvHs.setText(caidan.get荤素());
                                 tvCx.setText(caidan.get菜系());
-                                tvYycf.setText(caidan.get配料());
+                                //输出对应品名的营养成分
+
+                                tvYycf.setText(caidan.get可做());
                             }
                         });
 
@@ -229,9 +234,11 @@ public class Common_Fragment extends Fragment {
         };
 
 
+
         button_look_message.setOnClickListener(listener);
         button_look_admin.setOnClickListener(listener);
         button_make_caidan.setOnClickListener(listener);
+        button_look_collect.setOnClickListener(listener);
     }
 
 }
